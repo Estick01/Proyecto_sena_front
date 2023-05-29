@@ -1,0 +1,52 @@
+.block-elipce{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #192239;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.elipce{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: transparent;
+    border: 10px solid rgba(255, 0, 0, 0.363);
+    
+}
+.chart {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  .slice {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  
+  #slice1 {
+    background-color: #ff0000; /* Color de la primera sección */
+    transform: rotate(30deg);
+    z-index: 3; /* Ajusta el orden de apilamiento según tus necesidades */
+  }
+  
+  #slice2 {
+    background-color: #00ff00; /* Color de la segunda sección */
+    transform: rotate(90deg);
+    z-index: 2;
+  }
+  
+  #slice3 {
+    background-color: #0000ff; /* Color de la tercera sección */
+    transform: rotate(180deg);
+    z-index: 1;
+  }
+  

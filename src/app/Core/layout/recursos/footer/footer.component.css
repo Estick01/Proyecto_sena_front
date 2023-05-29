@@ -1,0 +1,28 @@
+
+.content-information{
+    width: 100%;
+    padding: 15px;
+}
+footer{
+    width: 100%;
+}
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.footer-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.footer-buttons button{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+}
+.footer-buttons button:hover{
+    color: #a8a8a8;
+}
