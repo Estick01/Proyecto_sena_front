@@ -12,6 +12,8 @@ import { DescripcionComponent } from 'src/app/Componentes/descripcion/descripcio
 import { ChargeWheelComponent } from 'src/app/Componentes/charge-wheel/charge-wheel.component';
 import { ProyectoFormativoComponent } from 'src/app/Componentes/proyecto-formativo/proyecto-formativo.component';
 import { CoreService } from 'src/app/shared/services/core.service';
+import { AreasComponent } from './areas/areas.component';
+
 
 
 @NgModule({
@@ -24,11 +26,13 @@ import { CoreService } from 'src/app/shared/services/core.service';
     FiltroSearchComponent,
     DireccionComponent,
     DescripcionComponent,
+    AreasComponent,
   ],
   imports: [
     CommonModule,
     ComponentesRoutingModule,
-    CoreModule
+    CoreModule,
+
   ],
   exports:[
     ChargeWheelComponent,

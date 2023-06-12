@@ -15,17 +15,22 @@ import { ProyectoFormativoComponent } from 'src/app/Componentes/proyecto-formati
 import { CoreService } from 'src/app/shared/services/core.service';
 import { ComponentesModule } from 'src/app/Componentes/componentes.module';
 
+
+
+
 @NgModule({
   declarations: [
     FooterComponent,
     NavComponent,
-    layoutComponent, 
+    layoutComponent,
+    
   ],
   imports: [
     CommonModule,
     LayoutRoutingModule,
     RouterModule,
-    ComponentesModule
+    ComponentesModule,
+
   ],
   exports:[
     layoutComponent,

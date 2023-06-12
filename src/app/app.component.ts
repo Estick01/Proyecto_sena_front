@@ -28,7 +28,6 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
         return;

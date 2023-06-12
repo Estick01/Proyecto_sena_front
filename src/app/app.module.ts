@@ -8,6 +8,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 import { RouterModule } from '@angular/router';
 import { IconSetService } from '@coreui/icons-angular';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { IconSetService } from '@coreui/icons-angular';
     HttpClientModule,
     SnotifyModule,
     RouterModule,
+
   ],
   providers: [
     {

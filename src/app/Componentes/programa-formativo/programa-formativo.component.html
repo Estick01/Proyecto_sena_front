@@ -1,30 +1,32 @@
 <main>
     <div class="bloque-information">
         <div class="content-information">
-            <ul class="Bloque-programas-formativos">
-                <li class="content-progrma-formativo" *ngFor="let programa of programas">
-                    <div class="programa-formativo" routerLink="ProyectoFormativo">
-                        <div class="fichas">
-                            <div><h4>6</h4></div>
-                            <span>Fichas ativas</span>
+            <div class="slick-wrapper">
+                <div class="slider" #slickElement>
+                    <div class="slide-item" *ngFor="let programa of programas">
+                        <div class="programa-formativo" routerLink="ProyectoFormativo">
+                            <div class="fichas">
+                                <div>
+                                    <h4>6</h4>
+                                </div>
+                                <span>Fichas ativas</span>
+                            </div>
+                            <div class="desc">
+                                <div>
+                                    <h4 #Programa>{{programa.nombrePrograma}}</h4>
+                                </div>
+                                <div><span>{{programa.descripcionPrograma}}</span></div>
+                            </div>
                         </div>
-                        <div class="desc">
-                            <div><h4 #Programa>{{programa.nombrePrograma}}</h4></div>
-                            <div><span>{{programa.descripcionPrograma}}</span></div>
+                        <div class="check">
+                            <input type="checkbox">
                         </div>
                     </div>
-                    <div class="check">
-                        <input type="checkbox">
-                    </div>
-                </li>
-            </ul>
+                </div>
+            </div>
             <div class="button-añadir">
                 <a><button>Añadir</button></a>
             </div>
         </div>
     </div>
 </main>
-
-
-
-

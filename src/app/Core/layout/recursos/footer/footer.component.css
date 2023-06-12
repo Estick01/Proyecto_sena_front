@@ -3,14 +3,14 @@
     width: 100%;
     padding: 15px;
 }
-footer{
-    width: 100%;
-}
+
 .footer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-size: 13px;
+    width: 100%;
+    z-index: 99999;
 }
 
 .footer-buttons{

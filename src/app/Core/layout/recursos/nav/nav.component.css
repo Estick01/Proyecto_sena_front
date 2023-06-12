@@ -1,3 +1,66 @@
+.menu {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    align-items: center;
+
+}
+.menu-vertical{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.menu-vertical ul{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #00000080;
+    border-radius: 10px;
+    margin: 0;
+    padding: 5px 5px 0px 5px;
+}
+.bot {
+    display: flex;
+    flex-direction: column;
+    width: 2.6rem;
+    border: 0;
+    background: transparent;
+    gap: .58rem;
+    justify-content: center;
+}
+
+.bot>div {
+    display: flex;
+    background: rgb(255, 255, 255);
+    height: 2px;
+    width: 100%;
+    border-radius: 5px;
+    transition: all .5s;
+    transform-origin: left;
+    justify-content: center;
+    align-items: center;
+}
+
+.bot--activa div:first-child {
+    display: flex;
+    transform: rotate(45deg);
+    justify-content: center;
+}
+
+.bot--activa div:nth-child(2) {
+    opacity: 0;
+}
+
+.bot--activa div:last-child {
+    transform: rotate(-45deg);
+}
+
 nav{
     justify-content: center;
     align-items: center;
@@ -9,18 +72,17 @@ nav{
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    padding: 0;
+    padding: 20px 0px;
     width: 100%;
-    margin: 20px 0px 20px 0px;
-    border: solid #203363 1px;
+    background-color: #11214963;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    border-radius: 40px;
 }
 .content-NavBar{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     width: 100%;
     height: 48px;
+    
 }
 .NavBar{
     display: flex;
@@ -28,37 +90,35 @@ nav{
     gap: 20px;
     align-items: center;
     background-color: transparent;
-    padding: 0px 0px ;
+    padding: 0px 20px;
 }
-.NavBar picture{
+.icons picture{
     display: flex;
-    max-width: 25px;
-    max-height: 25px;
     align-items: center;
     transition: 0.5s;
 }
-.NavBar li{
+.icons li{
     position: relative;
     transition: 0.3s;
 }
 
-.NavBar li:nth-child(1) .luna{
+.icons li:nth-child(1) .luna{
     position: absolute;
     opacity: 1;
 }
-.NavBar li:nth-child(-1n+3):hover{
+.icons li:nth-child(-1n+3):hover{
     transform: scale(1.3);
 }
-.NavBar li:nth-child(1) .sol{
+.icons li:nth-child(1) .sol{
     opacity: 0;
     transform: scale(1.3);
 
 }
-.NavBar .Campana:nth-child(2) picture:hover{
+.icons .Campana:nth-child(2) picture:hover{
     animation-name: campana;
     animation-duration: 0.3s;
 }
-.NavBar.Campana:nth-child(2)::after{
+.icons.Campana:nth-child(2)::after{
     position: absolute;
     content: "1";
     background-color: green;
@@ -90,18 +150,17 @@ nav{
         transform:  rotate(15deg) 
     }
 }
-.NavBar li:nth-child(3) picture:hover{
+.icons li:nth-child(3) picture:hover{
     transition: 0.5s;
     transform: rotate(180deg);
 }
-.NavBar li:nth-child(4){
+.icons li:nth-child(4){
     border-radius: 40px;
     width: 100%;
     transition: 0.5s;
     width: 46px;  
 }
-.NavBar li:nth-child(4):hover{
-    border-left: solid #203363 2px;
+.icons li:nth-child(4):hover{
     transition:  0.5s; 
     width: 120px;    
 }
@@ -120,22 +179,22 @@ nav{
     transition: 0.5s;
     overflow: hidden;  
 }
-.NavBar li:nth-child(4):hover span{
+.icons li:nth-child(4):hover span{
     opacity: 1;
     transition: 0.5s ease-in;    
 }
-.NavBar picture svg{
-    width: 40px;
-    height: 40px;
+.icons picture svg{
+    width: 20px;
+    height: 20px;
     padding: 2px;
 }
 .content-information{
-    width: 1500px;
+    width: 100%;
+    margin: 0;
     padding: 0;
 }
 ul{
     margin: 0;
-    padding: 10px; 
     fill: #ffffff;
 }
 .user img{
@@ -170,5 +229,73 @@ ul{
 .options li:hover{
     transform: scale(0);
     
+}
+.icon{
+    width: 100%;
+    height: 100%;
+}
+.icon svg{
+    width: 100%;
+    height: 100%;
+}
+.modal{
+    position: absolute;
+    left: 0;
+    background-color: #11214979;
+    bottom: 0;
+    top: 88px;
+    padding: 20px 0px ;
+    transition: 0.5s;
+    width: 60px;
+    transition: 0.5s;
+    z-index: 999;
+}
+.modal:hover {
+    width: 240px;
+    transition: 0.5s;
+}
+.modal:hover h4{
+    display: block;
+    transition: 0.5s;
+}
+.modal ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+    padding: 0;
+    margin:0;
+    transition: 0.5s;
+}
+.modal li{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 13px 13px 20px;
+    margin:0;
+    cursor: pointer;
+    color: #c4c4c4;
+    transition: 0.5s;
+}
+.modal:hover li{
+    transition: 0.5s;
+    margin: 0px 20px;
+    padding: 13px 50px 13px 20px;
+}
+.modal li:hover{
+    transition: 100ms;
+    padding-left: 30px;
+}
+.activa--li{
+    background-color: #161a2494;
+    color: #002f86 !important;
+    border-left: #002f86 solid 4px;
+}
+.modal h4{
+    display: none;
 }
 

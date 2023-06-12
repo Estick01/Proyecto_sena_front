@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild,ElementRef } from '@angular/core';
+import 'slick-carousel';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-charge-wheel',
@@ -6,14 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./charge-wheel.component.css']
 })
 export class ChargeWheelComponent {
-  porcentajeNumerico: number[];
+  @ViewChild('slickElement') slickElement!: ElementRef;
+  porcentajeNumericos: number[];
   colores: string[];
 
   constructor() {
-    this.porcentajeNumerico = [83, 55, 67,10,5,35];
+    this.porcentajeNumericos = [83, 55, 67,10,5,35,58,59,65,54,71];
     this.colores = [];
-    for (let i = 0; i < this.porcentajeNumerico.length; i++) {
-      const currentPorcentaje = this.porcentajeNumerico[i];
+    for (let i = 0; i < this.porcentajeNumericos.length; i++) {
+      const currentPorcentaje = this.porcentajeNumericos[i];
       let currentColor = "";
 
       if (currentPorcentaje < 16.6) {
@@ -30,6 +33,45 @@ export class ChargeWheelComponent {
         currentColor = "#54A920";
       }
       this.colores.push(currentColor);
+    }
+  }
+  
+  ngAfterViewChecked(): void {
+    if (this.slickElement.nativeElement.children.length > 3) {
+      $(this.slickElement.nativeElement).slick({
+        rows: 3,
+        dots: false,
+        arrows: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll:2,
+        responsive: [
+          {
+            breakpoint: 1250,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              rows: 3
+            }
+          },
+          {
+            breakpoint: 1100,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              rows: 2
+            }
+          },
+          {
+            breakpoint: 730,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              rows: 1
+            }
+          }
+        ]
+      });
     }
   }
 
